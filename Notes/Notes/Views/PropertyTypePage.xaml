@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="Notes.Views.PropertyTypePage"
+             Title="PropertyPage">
+
+    <ContentPage.Resources>
+        <!-- Implicit styles -->
+        <Style TargetType="{x:Type Editor}">
+            <Setter Property="BackgroundColor"
+                    Value="{StaticResource AppBackgroundColor}" />
+        </Style>
+    </ContentPage.Resources>
+
+    <!-- Layout children vertically -->
+    <StackLayout Margin="{StaticResource PageMargin}">
+        <Editor Placeholder="Добавить Keys"
+                Text="{Binding Keys}"
+                HeightRequest="80" />
+        
+        <Editor Placeholder="Добавить Descripsion"
+                Text="{Binding Descripsion}"
+                HeightRequest="80" />
+        
+        <Grid ColumnDefinitions="*,*">
+            
+            <Button Text="Создать"
+                    Clicked="OnSaveBtnClickedP"/>
+            <Button Grid.Column="1"
+                    Text="Удалить"
+                    Clicked="OnDeleteBtnClickedP"/>
+        </Grid>
+    </StackLayout>
+</ContentPage>

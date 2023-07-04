@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Notes.Views.SymbolPage"
+             Title="SymbolPage">
+
+    <ContentPage.Resources>
+        <!-- Implicit styles -->
+        <Style TargetType="{x:Type Editor}">
+            <Setter Property="BackgroundColor"
+                    Value="{StaticResource AppBackgroundColor}" />
+        </Style>
+    </ContentPage.Resources>
+
+    <!-- Layout children vertically -->
+    <StackLayout Margin="{StaticResource PageMargin}">
+
+        <Editor Placeholder="Добавить Symbol"
+                Text="{Binding Symbol}"
+                HeightRequest="100" />
+
+        <Editor Placeholder="Добавить Descriprion"
+                Text="{Binding Descriprion}"
+                HeightRequest="80" />
+        
+        <Editor Placeholder="Добавить Unit"
+                Text="{Binding Unit}"
+                HeightRequest="80" />
+        
+        <Editor Placeholder="Добавить Pow10"
+                Text="{Binding Pow10}"
+                HeightRequest="80" />
+
+        <Grid ColumnDefinitions="*,*">
+            <Button Text="Создать"
+                    Clicked="OnSaveBtnClickedS"/>
+            <Button Grid.Column="1"
+                    Text="Удалить"
+                    Clicked="OnDeleteBtnClickedS"/>
+        </Grid>
+    </StackLayout>
+</ContentPage>
